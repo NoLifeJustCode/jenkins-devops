@@ -1,5 +1,5 @@
 pipeline{
-	agent { docker { image : "node:latest" }}
+	agent { docker { image  "node:latest" }}
 	stages{
 		stage('Build'){
 			steps{
@@ -22,7 +22,7 @@ pipeline{
 		always{
 			echo "runs always"
 		}
-		fail {
+		failure {
 			echo "failed to run pipeline"
 		}
 	}
