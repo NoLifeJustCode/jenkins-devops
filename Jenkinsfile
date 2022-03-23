@@ -1,11 +1,21 @@
-node {
-	stage('Build') {
-		echo "Build"
+pipeline{
+	stages{
+		stage('Build'){
+			steps{
+				echo "build"
+			}
+		}
+		stage('test'){
+			steps{
+				echo "test"
+			}
+		}
+		stage('iTest'){
+			steps{
+				echo "iTest"
+			}
+		}
 	}
-	stage('Test') {
-		echo "Test"
-	}
-	stage('ITest'){
-		echo " new test for integration"
-	}
+
 }
+
