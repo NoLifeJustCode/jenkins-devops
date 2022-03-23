@@ -1,8 +1,9 @@
 pipeline{
-	agent any
+	agent { docker { image : "node:latest" }}
 	stages{
 		stage('Build'){
 			steps{
+				sh 'node --version'
 				echo "build"
 			}
 		}
@@ -20,6 +21,9 @@ pipeline{
 	post {
 		always{
 			echo "runs always"
+		}
+		fail {
+			echo "failed to run pipeline"
 		}
 	}
 
